@@ -1,0 +1,153 @@
+[W CUDAFunctions.cpp:109] Warning: CUDA initialization: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 802: system not yet initialized (function operator())
+Traceback (most recent call last):
+  File "multiple_choice/mc_no_trainer.py", line 510, in <module>
+    main()
+  File "multiple_choice/mc_no_trainer.py", line 237, in main
+    accelerator = Accelerator()
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/accelerator.py", line 79, in __init__
+    self.state = AcceleratorState(fp16=fp16, cpu=cpu, _from_accelerator=True)
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/state.py", line 125, in __init__
+    torch.distributed.init_process_group(backend="nccl")
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 510, in init_process_group
+    timeout=timeout))
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 603, in _new_process_group_helper
+    timeout)
+RuntimeError: ProcessGroupNCCL is only supported with GPUs, no GPUs found!
+[W CUDAFunctions.cpp:109] Warning: CUDA initialization: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 802: system not yet initialized (function operator())
+Traceback (most recent call last):
+  File "multiple_choice/mc_no_trainer.py", line 510, in <module>
+    main()
+  File "multiple_choice/mc_no_trainer.py", line 237, in main
+    accelerator = Accelerator()
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/accelerator.py", line 79, in __init__
+    self.state = AcceleratorState(fp16=fp16, cpu=cpu, _from_accelerator=True)
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/state.py", line 125, in __init__
+    torch.distributed.init_process_group(backend="nccl")
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 510, in init_process_group
+    timeout=timeout))
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 603, in _new_process_group_helper
+    timeout)
+RuntimeError: ProcessGroupNCCL is only supported with GPUs, no GPUs found!
+[W CUDAFunctions.cpp:109] Warning: CUDA initialization: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 802: system not yet initialized (function operator())
+Traceback (most recent call last):
+  File "multiple_choice/mc_no_trainer.py", line 510, in <module>
+    main()
+  File "multiple_choice/mc_no_trainer.py", line 237, in main
+    accelerator = Accelerator()
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/accelerator.py", line 79, in __init__
+    self.state = AcceleratorState(fp16=fp16, cpu=cpu, _from_accelerator=True)
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/state.py", line 125, in __init__
+    torch.distributed.init_process_group(backend="nccl")
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 510, in init_process_group
+    timeout=timeout))
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 603, in _new_process_group_helper
+    timeout)
+RuntimeError: ProcessGroupNCCL is only supported with GPUs, no GPUs found!
+[W CUDAFunctions.cpp:109] Warning: CUDA initialization: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 802: system not yet initialized (function operator())
+Traceback (most recent call last):
+  File "multiple_choice/mc_no_trainer.py", line 510, in <module>
+    main()
+  File "multiple_choice/mc_no_trainer.py", line 237, in main
+    accelerator = Accelerator()
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/accelerator.py", line 79, in __init__
+    self.state = AcceleratorState(fp16=fp16, cpu=cpu, _from_accelerator=True)
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/state.py", line 125, in __init__
+    torch.distributed.init_process_group(backend="nccl")
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 510, in init_process_group
+    timeout=timeout))
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 603, in _new_process_group_helper
+    timeout)
+RuntimeError: ProcessGroupNCCL is only supported with GPUs, no GPUs found!
+[W CUDAFunctions.cpp:109] Warning: CUDA initialization: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 802: system not yet initialized (function operator())
+[W CUDAFunctions.cpp:109] Warning: CUDA initialization: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 802: system not yet initialized (function operator())
+Traceback (most recent call last):
+  File "multiple_choice/mc_no_trainer.py", line 510, in <module>
+Traceback (most recent call last):
+  File "multiple_choice/mc_no_trainer.py", line 510, in <module>
+    main()
+  File "multiple_choice/mc_no_trainer.py", line 237, in main
+    main()
+  File "multiple_choice/mc_no_trainer.py", line 237, in main
+    accelerator = Accelerator()
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/accelerator.py", line 79, in __init__
+    accelerator = Accelerator()
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/accelerator.py", line 79, in __init__
+    self.state = AcceleratorState(fp16=fp16, cpu=cpu, _from_accelerator=True)
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/state.py", line 125, in __init__
+    self.state = AcceleratorState(fp16=fp16, cpu=cpu, _from_accelerator=True)
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/state.py", line 125, in __init__
+    torch.distributed.init_process_group(backend="nccl")
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 510, in init_process_group
+    torch.distributed.init_process_group(backend="nccl")
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 510, in init_process_group
+    timeout=timeout))
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 603, in _new_process_group_helper
+    timeout=timeout))
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 603, in _new_process_group_helper
+    timeout)
+RuntimeError: ProcessGroupNCCL is only supported with GPUs, no GPUs found!
+    timeout)
+RuntimeError: ProcessGroupNCCL is only supported with GPUs, no GPUs found!
+[W CUDAFunctions.cpp:109] Warning: CUDA initialization: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 802: system not yet initialized (function operator())
+Traceback (most recent call last):
+  File "multiple_choice/mc_no_trainer.py", line 510, in <module>
+    main()
+  File "multiple_choice/mc_no_trainer.py", line 237, in main
+    accelerator = Accelerator()
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/accelerator.py", line 79, in __init__
+    self.state = AcceleratorState(fp16=fp16, cpu=cpu, _from_accelerator=True)
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/state.py", line 125, in __init__
+    torch.distributed.init_process_group(backend="nccl")
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 510, in init_process_group
+    timeout=timeout))
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 603, in _new_process_group_helper
+    timeout)
+RuntimeError: ProcessGroupNCCL is only supported with GPUs, no GPUs found!
+[W CUDAFunctions.cpp:109] Warning: CUDA initialization: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 802: system not yet initialized (function operator())
+Traceback (most recent call last):
+  File "multiple_choice/mc_no_trainer.py", line 510, in <module>
+    main()
+  File "multiple_choice/mc_no_trainer.py", line 237, in main
+    accelerator = Accelerator()
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/accelerator.py", line 79, in __init__
+    self.state = AcceleratorState(fp16=fp16, cpu=cpu, _from_accelerator=True)
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/state.py", line 125, in __init__
+    torch.distributed.init_process_group(backend="nccl")
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 510, in init_process_group
+    timeout=timeout))
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 603, in _new_process_group_helper
+    timeout)
+RuntimeError: ProcessGroupNCCL is only supported with GPUs, no GPUs found!
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/ubuntu/anaconda3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/launch.py", line 340, in <module>
+    main()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/launch.py", line 326, in main
+    sigkill_handler(signal.SIGTERM, None)  # not coming back
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/torch/distributed/launch.py", line 301, in sigkill_handler
+    raise subprocess.CalledProcessError(returncode=last_return_code, cmd=cmd)
+subprocess.CalledProcessError: Command '['/home/ubuntu/casehold/venv/bin/python3.7', '-u', 'multiple_choice/mc_no_trainer.py', '--config_name', 'bert-large-uncased', '--tokenizer_name', 'bert-large-uncased', '--model_name_or_path', 'bert-large-uncased', '--max_seq_length', '128', '--per_device_train_batch_size=16', '--learning_rate=5e-6', '--num_train_epochs=6', '--output_dir', 'downstream_config_gridsearch/public/downstream_config_grid_search_5e-6_0.0001/', '--weight_decay=0.0001', '--seed=193228']' returned non-zero exit status 1.
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+Killing subprocess 69555
+Killing subprocess 69556
+Killing subprocess 69557
+Killing subprocess 69558
+Killing subprocess 69559
+Killing subprocess 69560
+Killing subprocess 69561
+Killing subprocess 69562
+Traceback (most recent call last):
+  File "/home/ubuntu/casehold/venv/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/commands/accelerate_cli.py", line 41, in main
+    args.func(args)
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/commands/launch.py", line 307, in launch_command
+    multi_gpu_launcher(args)
+  File "/home/ubuntu/casehold/venv/lib/python3.7/site-packages/accelerate/commands/launch.py", line 151, in multi_gpu_launcher
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/home/ubuntu/casehold/venv/bin/python3.7', '-m', 'torch.distributed.launch', '--use_env', '--nproc_per_node', '8', 'multiple_choice/mc_no_trainer.py', '--config_name', 'bert-large-uncased', '--tokenizer_name', 'bert-large-uncased', '--model_name_or_path', 'bert-large-uncased', '--max_seq_length', '128', '--per_device_train_batch_size=16', '--learning_rate=5e-6', '--num_train_epochs=6', '--output_dir', 'downstream_config_gridsearch/public/downstream_config_grid_search_5e-6_0.0001/', '--weight_decay=0.0001', '--seed=193228']' returned non-zero exit status 1.

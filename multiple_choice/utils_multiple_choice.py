@@ -56,6 +56,7 @@ class Split(Enum):
     dev = "dev"
     test = "test"
     full = "full"
+    example = "example"
 
 
 if is_torch_available():
@@ -78,6 +79,8 @@ if is_torch_available():
             overwrite_cache=False,
             mode: Split = Split.train,
         ):
+            #import pdb; pdb.set_trace()
+            
             processor = processors[task]()
 
             cached_features_file = os.path.join(
@@ -90,11 +93,13 @@ if is_torch_available():
                 ),
             )
 
+            cached_features_file = cached_features_file + ".pt"
+
             # Make sure only the first process in distributed training processes the dataset,
             # and the others will use the cache.
             lock_path = cached_features_file + ".lock"
             with FileLock(lock_path):
-
+                #import pdb; pdb.set_trace()
                 if os.path.exists(cached_features_file) and not overwrite_cache:
                     logger.info(f"Loading features from cached file {cached_features_file}")
                     self.features = torch.load(cached_features_file)
@@ -107,8 +112,11 @@ if is_torch_available():
                         examples = processor.get_test_examples(data_dir)
                     elif mode == Split.train:
                         examples = processor.get_train_examples(data_dir)
+                    elif mode == Split.example:
+                        examples = processor.get_example_examples(data_dir)
                     else:
                         examples = processor.get_all_examples(data_dir)
+                    #import pdb; pdb.set_trace()
                     logger.info("Training examples: %s", len(examples))
                     self.features = convert_examples_to_features(
                         examples,
@@ -116,10 +124,14 @@ if is_torch_available():
                         max_seq_length,
                         tokenizer,
                     )
+                    #import pdb; pdb.set_trace()
                     logger.info("Saving features into cached file %s", cached_features_file)
                     torch.save(self.features, cached_features_file)
 
         def __len__(self):
+            return len(self.features)
+
+        def num_samples(self):
             return len(self.features)
 
         def __getitem__(self, i) -> InputFeatures:
@@ -251,6 +263,11 @@ class CaseHOLDProcessor(DataProcessor):
         logger.info("LOOKING AT {} test".format(data_dir))
         return self._create_examples(self._read_csv(os.path.join(data_dir, "test.csv")), "test")
 
+    def get_example_examples(self, data_dir):
+        """See base class."""
+        logger.info("LOOKING AT {} test".format(data_dir))
+        return self._create_examples(self._read_csv(os.path.join(data_dir, "example.csv")), "test")
+
     def get_all_examples(self, data_dir):
         logger.info("LOOKING AT {} all".format(data_dir))
         return self._create_examples(self._read_csv(os.path.join(data_dir, "all.csv")), "full")
@@ -294,12 +311,16 @@ def convert_examples_to_features(
     Loads a data file into a list of `InputFeatures`
     """
 
+    #import pdb; pdb.set_trace()
+    
     label_map = {label: i for i, label in enumerate(label_list)}
 
     features = []
+    bad_count = 0
     for (ex_index, example) in tqdm.tqdm(enumerate(examples), desc="convert examples to features"):
-        if ex_index % 10000 == 0:
+        if ex_index % 100 == 0:
             logger.info("Writing example %d of %d" % (ex_index, len(examples)))
+            #logger.info("Written Features: {}".format(len(features)))
         choices_inputs = []
         for ending_idx, (context, ending) in enumerate(zip(example.contexts, example.endings)):
             text_a = context
@@ -321,10 +342,32 @@ def convert_examples_to_features(
 
             choices_inputs.append(inputs)
 
-        if example.label not in label_map.keys():
+        #import pdb; pdb.set_trace()
+        # try:
+        #     example.label = str(int(float(example.label)))
+        # except:
+        #     bad_count += 1
+        #     print("label example: {}, type: {}".format(example.label, type(example.label)))
+        
+        test_label = ""
+        if example.label == "0.0":
+            test_label = '0'
+        elif example.label == "1.0":
+            test_label = '1'
+        elif example.label == "2.0":
+            test_label = '2'
+        elif example.label == "3.0":
+            test_label = '3'
+        elif example.label == "4.0":
+            test_label = '4'
+        
+        if test_label not in label_map.keys():
+            bad_count += 1
+            print("bad_count: {}, label example: {}, label_map.keys: {}".format(bad_count, test_label, label_map.keys()))
             continue
         
-        label = label_map[example.label]
+        #print("here")
+        label = label_map[test_label]
 
         input_ids = [x["input_ids"] for x in choices_inputs]
         attention_mask = (
@@ -334,6 +377,7 @@ def convert_examples_to_features(
             [x["token_type_ids"] for x in choices_inputs] if "token_type_ids" in choices_inputs[0] else None
         )
 
+        #import pdb; pdb.set_trace()
         features.append(
             InputFeatures(
                 example_id=example.example_id,
@@ -343,10 +387,11 @@ def convert_examples_to_features(
                 label=label,
             )
         )
+        #print("Written Features: {}".format(len(features)))
 
-    for f in features[:2]:
-        logger.info("*** Example ***")
-        logger.info("feature: %s" % f)
+    # for f in features[:2]:
+    #     logger.info("*** Example ***")
+    #     logger.info("feature: %s" % f)
 
     return features
 
